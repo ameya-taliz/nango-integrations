@@ -1,0 +1,857 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "SyncMetadata_asana_tasks": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "AsanaTask": {
+      "type": "object",
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        },
+        "resource_subtype": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "modified_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "workspace": {
+          "type": "object",
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "gid",
+            "resource_type"
+          ],
+          "additionalProperties": false
+        },
+        "projects": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gid": {
+                    "type": "string"
+                  },
+                  "resource_type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "gid",
+                  "resource_type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dependencies": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gid": {
+                    "type": "string"
+                  },
+                  "resource_type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "gid",
+                  "resource_type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "gid": {
+                  "type": "string"
+                },
+                "resource_type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "gid",
+                "resource_type"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "permalink_url": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "gid",
+        "resource_type",
+        "resource_subtype",
+        "name",
+        "created_at",
+        "modified_at",
+        "start_at",
+        "start_on",
+        "due_at",
+        "due_on",
+        "completed_at",
+        "workspace",
+        "projects",
+        "dependencies",
+        "notes",
+        "parent",
+        "permalink_url",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "SyncMetadata_asana_projects": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "AsanaProject": {
+      "type": "object",
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "due_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "modified_at": {
+          "type": "string"
+        },
+        "permalink_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "gid",
+        "resource_type",
+        "name",
+        "id",
+        "due_on",
+        "start_on",
+        "completed_at",
+        "notes",
+        "created_at",
+        "modified_at",
+        "permalink_url"
+      ],
+      "additionalProperties": false
+    },
+    "ActionInput_asana_updateproject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "due_on": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_asana_updateproject": {
+      "type": "object",
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "due_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "modified_at": {
+          "type": "string"
+        },
+        "permalink_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "gid",
+        "resource_type",
+        "name",
+        "id",
+        "due_on",
+        "start_on",
+        "completed_at",
+        "notes",
+        "created_at",
+        "modified_at",
+        "permalink_url"
+      ],
+      "additionalProperties": false
+    },
+    "ActionInput_asana_createtask": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "start_on": {
+          "type": "string"
+        },
+        "due_on": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "projects"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_asana_createtask": {
+      "type": "object",
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        },
+        "resource_subtype": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "modified_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "workspace": {
+          "type": "object",
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "gid",
+            "resource_type"
+          ],
+          "additionalProperties": false
+        },
+        "projects": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gid": {
+                    "type": "string"
+                  },
+                  "resource_type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "gid",
+                  "resource_type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dependencies": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gid": {
+                    "type": "string"
+                  },
+                  "resource_type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "gid",
+                  "resource_type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "gid": {
+                  "type": "string"
+                },
+                "resource_type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "gid",
+                "resource_type"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "permalink_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "gid",
+        "resource_type",
+        "resource_subtype",
+        "name",
+        "created_at",
+        "modified_at",
+        "start_at",
+        "start_on",
+        "due_at",
+        "due_on",
+        "completed_at",
+        "workspace",
+        "projects",
+        "dependencies",
+        "notes",
+        "parent",
+        "permalink_url"
+      ],
+      "additionalProperties": false
+    },
+    "ActionInput_asana_updatetask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "due_on": {
+          "type": "string"
+        },
+        "completed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_asana_updatetask": {
+      "type": "object",
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        },
+        "resource_subtype": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "modified_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due_on": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "workspace": {
+          "type": "object",
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "gid",
+            "resource_type"
+          ],
+          "additionalProperties": false
+        },
+        "projects": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gid": {
+                    "type": "string"
+                  },
+                  "resource_type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "gid",
+                  "resource_type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dependencies": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gid": {
+                    "type": "string"
+                  },
+                  "resource_type": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "gid",
+                  "resource_type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "gid": {
+                  "type": "string"
+                },
+                "resource_type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "gid",
+                "resource_type"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "permalink_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "gid",
+        "resource_type",
+        "resource_subtype",
+        "name",
+        "created_at",
+        "modified_at",
+        "start_at",
+        "start_on",
+        "due_at",
+        "due_on",
+        "completed_at",
+        "workspace",
+        "projects",
+        "dependencies",
+        "notes",
+        "parent",
+        "permalink_url"
+      ],
+      "additionalProperties": false
+    },
+    "ActionInput_asana_deletetask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_asana_deletetask": {
+      "type": "boolean"
+    },
+    "ActionInput_slack_sendmessage": {
+      "type": "object",
+      "properties": {
+        "channel": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "icon_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "channel",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_slack_sendmessage": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "channel": {
+          "type": "string"
+        },
+        "ts": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "warning": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        },
+        "raw_json": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ok",
+        "raw_json"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$comment": "This file was generated by Nango (v0.69.5)"
+}

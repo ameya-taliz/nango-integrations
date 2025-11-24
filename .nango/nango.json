@@ -1,0 +1,189 @@
+[
+  {
+    "providerConfigKey": "asana",
+    "actions": [
+      {
+        "type": "action",
+        "description": "Update a project with selected fields",
+        "endpoint": {
+          "method": "PUT",
+          "path": "/projects",
+          "group": "Projects"
+        },
+        "input": "ActionInput_asana_updateproject",
+        "name": "update-project",
+        "output": [
+          "ActionOutput_asana_updateproject"
+        ],
+        "scopes": [
+          "projects:write"
+        ],
+        "usedModels": [
+          "ActionInput_asana_updateproject",
+          "ActionOutput_asana_updateproject"
+        ],
+        "version": "1.0.1"
+      },
+      {
+        "type": "action",
+        "description": "Create a task using Asana specific fields",
+        "endpoint": {
+          "method": "POST",
+          "path": "/tasks",
+          "group": "Tasks"
+        },
+        "input": "ActionInput_asana_createtask",
+        "name": "create-task",
+        "output": [
+          "ActionOutput_asana_createtask"
+        ],
+        "scopes": [
+          "tasks:write"
+        ],
+        "usedModels": [
+          "ActionInput_asana_createtask",
+          "ActionOutput_asana_createtask"
+        ],
+        "version": "2.1.1"
+      },
+      {
+        "type": "action",
+        "description": "Update a task and be able to assign the task to a specific user",
+        "endpoint": {
+          "method": "PATCH",
+          "path": "/tasks",
+          "group": "Tasks"
+        },
+        "input": "ActionInput_asana_updatetask",
+        "name": "update-task",
+        "output": [
+          "ActionOutput_asana_updatetask"
+        ],
+        "scopes": [
+          "tasks:write"
+        ],
+        "usedModels": [
+          "ActionInput_asana_updatetask",
+          "ActionOutput_asana_updatetask"
+        ],
+        "version": "2.1.1"
+      },
+      {
+        "type": "action",
+        "description": "Delete a task.",
+        "endpoint": {
+          "method": "DELETE",
+          "path": "/tasks",
+          "group": "Tasks"
+        },
+        "input": "ActionInput_asana_deletetask",
+        "name": "delete-task",
+        "output": [
+          "ActionOutput_asana_deletetask"
+        ],
+        "scopes": [
+          "tasks:delete"
+        ],
+        "usedModels": [
+          "ActionInput_asana_deletetask",
+          "ActionOutput_asana_deletetask"
+        ],
+        "version": "2.0.1"
+      }
+    ],
+    "syncs": [
+      {
+        "type": "sync",
+        "description": "Retrieve all tasks that exist in the workspace",
+        "auto_start": true,
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/tasks",
+            "group": "Tasks"
+          }
+        ],
+        "input": "SyncMetadata_asana_tasks",
+        "name": "tasks",
+        "output": [
+          "AsanaTask"
+        ],
+        "runs": "every day",
+        "scopes": [],
+        "sync_type": "full",
+        "track_deletes": false,
+        "usedModels": [
+          "AsanaTask",
+          "SyncMetadata_asana_tasks"
+        ],
+        "version": "2.1.4",
+        "webhookSubscriptions": []
+      },
+      {
+        "type": "sync",
+        "description": "Retrieves all projects for a user",
+        "auto_start": true,
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/projects",
+            "group": "Projects"
+          }
+        ],
+        "input": "SyncMetadata_asana_projects",
+        "name": "projects",
+        "output": [
+          "AsanaProject"
+        ],
+        "runs": "every day",
+        "scopes": [],
+        "sync_type": "full",
+        "track_deletes": false,
+        "usedModels": [
+          "AsanaProject",
+          "SyncMetadata_asana_projects"
+        ],
+        "version": "2.1.1",
+        "webhookSubscriptions": []
+      }
+    ],
+    "onEventScripts": {
+      "post-connection-creation": [],
+      "pre-connection-deletion": [],
+      "validate-connection": []
+    }
+  },
+  {
+    "providerConfigKey": "slack",
+    "actions": [
+      {
+        "type": "action",
+        "description": "An action that sends a message to a slack channel.",
+        "endpoint": {
+          "method": "POST",
+          "path": "/messages",
+          "group": "Messages"
+        },
+        "input": "ActionInput_slack_sendmessage",
+        "name": "send-message",
+        "output": [
+          "ActionOutput_slack_sendmessage"
+        ],
+        "scopes": [
+          "chat:write"
+        ],
+        "usedModels": [
+          "ActionInput_slack_sendmessage",
+          "ActionOutput_slack_sendmessage"
+        ],
+        "version": "2.0.0"
+      }
+    ],
+    "syncs": [],
+    "onEventScripts": {
+      "post-connection-creation": [],
+      "pre-connection-deletion": [],
+      "validate-connection": []
+    }
+  }
+]
