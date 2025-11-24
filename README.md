@@ -1,6 +1,7 @@
 # Setup
-1. Create duplicate of `.env.sample`, rename it so you have `.env`, and update values
-2. Sign up for personal Nango account at `https://nango.dev`
+1. Sign up for personal Nango account at `https://nango.dev`
+2. Create duplicate of `.env.sample`, rename it so you have `.env`, and update values
+
 
 # Development
 Documentation: https://nango.dev/docs/implementation-guides/syncs/implement-a-sync

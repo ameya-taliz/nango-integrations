@@ -4,8 +4,8 @@ import { AsanaProject } from '../models.js';
 import { z } from 'zod';
 
 const sync = createSync({
-    description: 'Retrieves all projects for a user',
-    version: '2.1.1',
+    description: 'Retrieves all projects',
+    version: '2.1.2',
     frequency: 'every day',
     autoStart: true,
     syncType: 'full',

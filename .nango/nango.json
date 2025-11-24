@@ -121,7 +121,7 @@
       },
       {
         "type": "sync",
-        "description": "Retrieves all projects for a user",
+        "description": "Retrieves all projects",
         "auto_start": true,
         "endpoints": [
           {
@@ -143,7 +143,7 @@
           "AsanaProject",
           "SyncMetadata_asana_projects"
         ],
-        "version": "2.1.1",
+        "version": "2.1.2",
         "webhookSubscriptions": []
       }
     ],
