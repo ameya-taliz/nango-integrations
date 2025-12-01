@@ -154,6 +154,110 @@
     }
   },
   {
+    "providerConfigKey": "rocketlane",
+    "actions": [
+      {
+        "type": "action",
+        "description": "Update a project with selected fields",
+        "endpoint": {
+          "method": "PUT",
+          "path": "/projects",
+          "group": "Projects"
+        },
+        "input": "ActionInput_rocketlane_updaterocketlaneproject",
+        "name": "update-rocketlane-project",
+        "output": [
+          "ActionOutput_rocketlane_updaterocketlaneproject"
+        ],
+        "scopes": [],
+        "usedModels": [
+          "ActionInput_rocketlane_updaterocketlaneproject",
+          "ActionOutput_rocketlane_updaterocketlaneproject"
+        ],
+        "version": "1.1.0"
+      },
+      {
+        "type": "action",
+        "description": "Update a task with selected fields",
+        "endpoint": {
+          "method": "PUT",
+          "path": "/tasks",
+          "group": "Tasks"
+        },
+        "input": "ActionInput_rocketlane_updaterocketlanetask",
+        "name": "update-rocketlane-task",
+        "output": [
+          "ActionOutput_rocketlane_updaterocketlanetask"
+        ],
+        "scopes": [],
+        "usedModels": [
+          "ActionInput_rocketlane_updaterocketlanetask",
+          "ActionOutput_rocketlane_updaterocketlanetask"
+        ],
+        "version": "1.1.0"
+      }
+    ],
+    "syncs": [
+      {
+        "type": "sync",
+        "description": "Retrieves all projects, including member information",
+        "auto_start": false,
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/rocketlane/projects",
+            "group": "Projects"
+          }
+        ],
+        "input": null,
+        "name": "rocketlane-projects",
+        "output": [
+          "RocketlaneProject"
+        ],
+        "runs": "every week",
+        "scopes": [],
+        "sync_type": "full",
+        "track_deletes": true,
+        "usedModels": [
+          "RocketlaneProject"
+        ],
+        "version": "1.1.2",
+        "webhookSubscriptions": []
+      },
+      {
+        "type": "sync",
+        "description": "Retrieves all tasks, including owner and project information",
+        "auto_start": false,
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/rocketlane/tasks",
+            "group": "Tasks"
+          }
+        ],
+        "input": null,
+        "name": "rocketlane-tasks",
+        "output": [
+          "RocketlaneTask"
+        ],
+        "runs": "every week",
+        "scopes": [],
+        "sync_type": "full",
+        "track_deletes": true,
+        "usedModels": [
+          "RocketlaneTask"
+        ],
+        "version": "1.1.0",
+        "webhookSubscriptions": []
+      }
+    ],
+    "onEventScripts": {
+      "post-connection-creation": [],
+      "pre-connection-deletion": [],
+      "validate-connection": []
+    }
+  },
+  {
     "providerConfigKey": "slack",
     "actions": [
       {

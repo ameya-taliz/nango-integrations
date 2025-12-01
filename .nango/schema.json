@@ -799,6 +799,789 @@
     "ActionOutput_asana_deletetask": {
       "type": "boolean"
     },
+    "RocketlaneProject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "projectId": {
+          "type": "number"
+        },
+        "projectName": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dueDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "emailId": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "number"
+            },
+            "firstName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lastName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "emailId",
+            "userId"
+          ],
+          "additionalProperties": false
+        },
+        "teamMembers": {
+          "type": "object",
+          "properties": {
+            "members": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "emailId": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "number"
+                  },
+                  "firstName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "lastName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "emailId",
+                  "userId"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "customers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "emailId": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "number"
+                  },
+                  "firstName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "lastName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "emailId",
+                  "userId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "members",
+            "customers"
+          ],
+          "additionalProperties": false
+        },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "companyId": {
+              "type": "number"
+            },
+            "companyName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "companyId",
+            "companyName"
+          ],
+          "additionalProperties": false
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "projectId",
+        "projectName",
+        "createdAt",
+        "updatedAt",
+        "owner",
+        "teamMembers",
+        "customer",
+        "archived",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "RocketlaneTask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "taskId": {
+          "type": "number"
+        },
+        "taskName": {
+          "type": "string"
+        },
+        "taskDescription": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dueDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "createdBy": {
+          "type": "object",
+          "properties": {
+            "emailId": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "number"
+            },
+            "firstName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lastName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "emailId",
+            "userId"
+          ],
+          "additionalProperties": false
+        },
+        "updatedBy": {
+          "type": "object",
+          "properties": {
+            "emailId": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "number"
+            },
+            "firstName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lastName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "emailId",
+            "userId"
+          ],
+          "additionalProperties": false
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "project": {
+          "type": "object",
+          "properties": {
+            "projectId": {
+              "type": "number"
+            },
+            "projectName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectId",
+            "projectName"
+          ],
+          "additionalProperties": false
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "taskId": {
+                "type": "number"
+              },
+              "taskName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "taskId",
+              "taskName"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "parent": {
+          "type": "object",
+          "properties": {
+            "taskId": {
+              "type": "number"
+            },
+            "taskName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "taskId",
+            "taskName"
+          ],
+          "additionalProperties": false
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "taskId",
+        "taskName",
+        "createdAt",
+        "updatedAt",
+        "archived",
+        "createdBy",
+        "updatedBy",
+        "status",
+        "project"
+      ],
+      "additionalProperties": false
+    },
+    "ActionInput_rocketlane_updaterocketlaneproject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "dueDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_rocketlane_updaterocketlaneproject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "projectId": {
+          "type": "number"
+        },
+        "projectName": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dueDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "emailId": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "number"
+            },
+            "firstName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lastName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "emailId",
+            "userId"
+          ],
+          "additionalProperties": false
+        },
+        "teamMembers": {
+          "type": "object",
+          "properties": {
+            "members": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "emailId": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "number"
+                  },
+                  "firstName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "lastName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "emailId",
+                  "userId"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "customers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "emailId": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "number"
+                  },
+                  "firstName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "lastName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "emailId",
+                  "userId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "members",
+            "customers"
+          ],
+          "additionalProperties": false
+        },
+        "customer": {
+          "type": "object",
+          "properties": {
+            "companyId": {
+              "type": "number"
+            },
+            "companyName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "companyId",
+            "companyName"
+          ],
+          "additionalProperties": false
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "projectId",
+        "projectName",
+        "createdAt",
+        "updatedAt",
+        "owner",
+        "teamMembers",
+        "customer",
+        "archived",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "ActionInput_rocketlane_updaterocketlanetask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "dueDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "taskName": {
+          "type": "string"
+        },
+        "taskDescription": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_rocketlane_updaterocketlanetask": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "taskId": {
+          "type": "number"
+        },
+        "taskName": {
+          "type": "string"
+        },
+        "taskDescription": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "startDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dueDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "createdBy": {
+          "type": "object",
+          "properties": {
+            "emailId": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "number"
+            },
+            "firstName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lastName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "emailId",
+            "userId"
+          ],
+          "additionalProperties": false
+        },
+        "updatedBy": {
+          "type": "object",
+          "properties": {
+            "emailId": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "number"
+            },
+            "firstName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "lastName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "emailId",
+            "userId"
+          ],
+          "additionalProperties": false
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "project": {
+          "type": "object",
+          "properties": {
+            "projectId": {
+              "type": "number"
+            },
+            "projectName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectId",
+            "projectName"
+          ],
+          "additionalProperties": false
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "taskId": {
+                "type": "number"
+              },
+              "taskName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "taskId",
+              "taskName"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "parent": {
+          "type": "object",
+          "properties": {
+            "taskId": {
+              "type": "number"
+            },
+            "taskName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "taskId",
+            "taskName"
+          ],
+          "additionalProperties": false
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "taskId",
+        "taskName",
+        "createdAt",
+        "updatedAt",
+        "archived",
+        "createdBy",
+        "updatedBy",
+        "status",
+        "project"
+      ],
+      "additionalProperties": false
+    },
     "ActionInput_slack_sendmessage": {
       "type": "object",
       "properties": {
@@ -853,5 +1636,5 @@
       "additionalProperties": false
     }
   },
-  "$comment": "This file was generated by Nango (v0.69.5)"
+  "$comment": "This file was generated by Nango (v0.69.14)"
 }

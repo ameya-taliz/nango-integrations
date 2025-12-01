@@ -10,6 +10,12 @@ import './asana/actions/create-task.js';
 import './asana/actions/update-task.js';
 import './asana/actions/delete-task.js';
 
+// -- Integration: rocketlane
+import './rocketlane/syncs/rocketlane-projects.js';
+import './rocketlane/syncs/rocketlane-tasks.js';
+import './rocketlane/actions/update-rocketlane-project.js';
+import './rocketlane/actions/update-rocketlane-task.js';
+
 // -- Integration: slack
 // import './slack/syncs/users.js';
 // import './slack/syncs/channels.js';
