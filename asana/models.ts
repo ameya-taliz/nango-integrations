@@ -145,6 +145,16 @@ export const AsanaUpdateTask = z.object({
 
 export type AsanaUpdateTask = z.infer<typeof AsanaUpdateTask>;
 
+export const AsanaTaskDependencies = z.object({
+  id: z.string(),
+  dependencies: z.string().array()
+});
+
+export type AsanaTaskDependencies = z.infer<typeof AsanaTaskDependencies>;
+
+export const EmptyAsanaResponse = z.object({});
+export type EmptyAsanaResponse = z.infer<typeof EmptyAsanaResponse>;
+
 export const AsanaUpdateProject = z.object({
   id: z.string(),
   notes: z.string().optional(),

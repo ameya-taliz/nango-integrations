@@ -799,6 +799,52 @@
     "ActionOutput_asana_deletetask": {
       "type": "boolean"
     },
+    "ActionInput_asana_addasanadependencies": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "dependencies"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_asana_addasanadependencies": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ActionInput_asana_removeasanadependencies": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "dependencies"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOutput_asana_removeasanadependencies": {
+      "type": "object",
+      "additionalProperties": false
+    },
     "RocketlaneProject": {
       "type": "object",
       "properties": {

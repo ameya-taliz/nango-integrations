@@ -9,6 +9,8 @@ import './asana/actions/update-project.js';
 import './asana/actions/create-task.js';
 import './asana/actions/update-task.js';
 import './asana/actions/delete-task.js';
+import './asana/actions/add-asana-dependencies.js';
+import './asana/actions/remove-asana-dependencies.js';
 
 // -- Integration: rocketlane
 import './rocketlane/syncs/rocketlane-projects.js';

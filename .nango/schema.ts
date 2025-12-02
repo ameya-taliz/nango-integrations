@@ -150,6 +150,22 @@ export interface ActionInput_asana_deletetask {
 
 export type ActionOutput_asana_deletetask = boolean
 
+export interface ActionInput_asana_addasanadependencies {
+  id: string;
+  dependencies: string[];
+};
+
+export interface ActionOutput_asana_addasanadependencies {
+};
+
+export interface ActionInput_asana_removeasanadependencies {
+  id: string;
+  dependencies: string[];
+};
+
+export interface ActionOutput_asana_removeasanadependencies {
+};
+
 export interface RocketlaneProject {
   id: string;
   projectId: number;

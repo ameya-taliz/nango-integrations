@@ -89,6 +89,50 @@
           "ActionOutput_asana_deletetask"
         ],
         "version": "2.0.1"
+      },
+      {
+        "type": "action",
+        "description": "Add dependencies to a task",
+        "endpoint": {
+          "method": "POST",
+          "path": "/tasks/{task_id}/addDependencies",
+          "group": "Tasks"
+        },
+        "input": "ActionInput_asana_addasanadependencies",
+        "name": "add-asana-dependencies",
+        "output": [
+          "ActionOutput_asana_addasanadependencies"
+        ],
+        "scopes": [
+          "tasks:write"
+        ],
+        "usedModels": [
+          "ActionInput_asana_addasanadependencies",
+          "ActionOutput_asana_addasanadependencies"
+        ],
+        "version": "1.0.0"
+      },
+      {
+        "type": "action",
+        "description": "Remove dependencies from a task",
+        "endpoint": {
+          "method": "POST",
+          "path": "/tasks/{task_id}/removeDependencies",
+          "group": "Tasks"
+        },
+        "input": "ActionInput_asana_removeasanadependencies",
+        "name": "remove-asana-dependencies",
+        "output": [
+          "ActionOutput_asana_removeasanadependencies"
+        ],
+        "scopes": [
+          "tasks:write"
+        ],
+        "usedModels": [
+          "ActionInput_asana_removeasanadependencies",
+          "ActionOutput_asana_removeasanadependencies"
+        ],
+        "version": "1.0.0"
       }
     ],
     "syncs": [
