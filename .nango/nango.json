@@ -88,7 +88,7 @@
           "ActionInput_asana_deletetask",
           "ActionOutput_asana_deletetask"
         ],
-        "version": "2.0.1"
+        "version": "2.0.2"
       },
       {
         "type": "action",

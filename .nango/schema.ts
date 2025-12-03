@@ -148,7 +148,8 @@ export interface ActionInput_asana_deletetask {
   id: string;
 };
 
-export type ActionOutput_asana_deletetask = boolean
+export interface ActionOutput_asana_deletetask {
+};
 
 export interface ActionInput_asana_addasanadependencies {
   id: string;

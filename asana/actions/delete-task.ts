@@ -1,10 +1,10 @@
 import { createAction } from 'nango';
 import type { NangoActionError } from '../models.js';
-import { Anonymous_asana_action_deletetask_output, Id } from '../models.js';
+import { EmptyAsanaResponse, Id } from '../models.js';
 
 const action = createAction({
     description: 'Delete a task.',
-    version: '2.0.1',
+    version: '2.0.2',
     scopes: ['tasks:delete'],
 
     endpoint: {
@@ -14,9 +14,9 @@ const action = createAction({
     },
 
     input: Id,
-    output: Anonymous_asana_action_deletetask_output,
+    output: EmptyAsanaResponse,
 
-    exec: async (nango, input): Promise<Anonymous_asana_action_deletetask_output> => {
+    exec: async (nango, input): Promise<EmptyAsanaResponse> => {
         if (!input.id) {
             throw new nango.ActionError<NangoActionError>({
                 type: 'validation_error',
@@ -28,7 +28,7 @@ const action = createAction({
             retries: 3
         });
 
-        return response.status === 200;
+        return response.data.data;
     }
 });
 

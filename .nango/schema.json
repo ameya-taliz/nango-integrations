@@ -797,7 +797,8 @@
       "additionalProperties": false
     },
     "ActionOutput_asana_deletetask": {
-      "type": "boolean"
+      "type": "object",
+      "additionalProperties": false
     },
     "ActionInput_asana_addasanadependencies": {
       "type": "object",
