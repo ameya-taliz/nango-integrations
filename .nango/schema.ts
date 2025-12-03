@@ -223,6 +223,22 @@ export interface RocketlaneTask {
   type?: string | undefined;
 };
 
+export interface RocketlaneUser {
+  id: string;
+  userId: number;
+  firstName?: string | undefined;
+  lastName?: string | undefined;
+  emailId: string;
+  type: 'TEAM_MEMBER' | 'CUSTOMER' | 'PARTNER' | 'EXTERNAL_PARTNER';
+  status: 'ACTIVE' | 'INACTIVE' | 'INVITED' | 'PASSIVE';
+  role: {  roleId: number;
+  roleName: string;};
+  company: {  companyId: number;
+  companyName: string;};
+  createdAt: string;
+  updatedAt: string;
+};
+
 export interface ActionInput_rocketlane_updaterocketlaneproject {
   id: string;
   dueDate?: string | null | undefined;

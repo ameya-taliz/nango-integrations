@@ -293,6 +293,32 @@
         ],
         "version": "1.1.0",
         "webhookSubscriptions": []
+      },
+      {
+        "type": "sync",
+        "description": "Retrieves all users",
+        "auto_start": false,
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/rocketlane/users",
+            "group": "Users"
+          }
+        ],
+        "input": null,
+        "name": "rocketlane-users",
+        "output": [
+          "RocketlaneUser"
+        ],
+        "runs": "every week",
+        "scopes": [],
+        "sync_type": "full",
+        "track_deletes": true,
+        "usedModels": [
+          "RocketlaneUser"
+        ],
+        "version": "1.0.0",
+        "webhookSubscriptions": []
       }
     ],
     "onEventScripts": {

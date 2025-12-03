@@ -1206,6 +1206,94 @@
       ],
       "additionalProperties": false
     },
+    "RocketlaneUser": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "number"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "emailId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "TEAM_MEMBER",
+            "CUSTOMER",
+            "PARTNER",
+            "EXTERNAL_PARTNER"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "INACTIVE",
+            "INVITED",
+            "PASSIVE"
+          ]
+        },
+        "role": {
+          "type": "object",
+          "properties": {
+            "roleId": {
+              "type": "number"
+            },
+            "roleName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "roleId",
+            "roleName"
+          ],
+          "additionalProperties": false
+        },
+        "company": {
+          "type": "object",
+          "properties": {
+            "companyId": {
+              "type": "number"
+            },
+            "companyName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "companyId",
+            "companyName"
+          ],
+          "additionalProperties": false
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "emailId",
+        "type",
+        "status",
+        "role",
+        "company",
+        "createdAt",
+        "updatedAt"
+      ],
+      "additionalProperties": false
+    },
     "ActionInput_rocketlane_updaterocketlaneproject": {
       "type": "object",
       "properties": {

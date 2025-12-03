@@ -1,5 +1,8 @@
 import * as z from 'zod';
 
+/***************************************************************
+* Projects
+***************************************************************/
 export const RocketlaneProject = z.object({
     id: z.string(),
     projectId: z.number(),
@@ -48,6 +51,33 @@ export const RocketlaneProject = z.object({
 
   export type RocketlaneUpdateProject = z.infer<typeof RocketlaneUpdateProject>;
 
+/***************************************************************
+* Users
+***************************************************************/
+export const RocketlaneUser = z.object({
+  id: z.string(),
+  userId: z.number(),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+  emailId: z.string(),
+  type: z.enum(['TEAM_MEMBER', 'CUSTOMER', 'PARTNER', 'EXTERNAL_PARTNER']),
+  status: z.enum(['ACTIVE', 'INACTIVE', 'INVITED', 'PASSIVE']),
+  role: z.object({
+    roleId: z.number(),
+    roleName: z.string(),
+  }),
+  company: z.object({
+    companyId: z.number(),
+    companyName: z.string(),
+  }),
+  createdAt: z.string(), // ISO 8601 datetime string
+  updatedAt: z.string(), // ISO 8601 datetime string
+});
+
+export type RocketlaneUser = z.infer<typeof RocketlaneUser>;
+/***************************************************************
+* Tasks
+***************************************************************/
   export const RocketlaneTask = z.object({
     id: z.string(),
     taskId: z.number(),

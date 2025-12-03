@@ -15,6 +15,7 @@ import './asana/actions/remove-asana-dependencies.js';
 // -- Integration: rocketlane
 import './rocketlane/syncs/rocketlane-projects.js';
 import './rocketlane/syncs/rocketlane-tasks.js';
+import './rocketlane/syncs/rocketlane-users.js';
 import './rocketlane/actions/update-rocketlane-project.js';
 import './rocketlane/actions/update-rocketlane-task.js';
 
