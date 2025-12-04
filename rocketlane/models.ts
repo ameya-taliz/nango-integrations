@@ -134,12 +134,12 @@ export type RocketlaneUser = z.infer<typeof RocketlaneUser>;
       })).optional(),
     }).optional(),
     phase: z.object({
-      value: z.number(),
-      label: z.string(),
+      value: z.number().optional(),
+      label: z.string().optional(),
     }).optional(),
     priority: z.object({
-      value: z.number(),
-      label: z.string(),
+      value: z.number().optional(),
+      label: z.string().optional(),
     }).optional(),
   });
   
