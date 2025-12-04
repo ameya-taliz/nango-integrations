@@ -270,7 +270,7 @@
       },
       {
         "type": "sync",
-        "description": "Retrieves all tasks, including owner and project information",
+        "description": "Retrieves all tasks, including assignee and project information",
         "auto_start": false,
         "endpoints": [
           {
@@ -291,7 +291,7 @@
         "usedModels": [
           "RocketlaneTask"
         ],
-        "version": "1.1.0",
+        "version": "1.2.0",
         "webhookSubscriptions": []
       },
       {

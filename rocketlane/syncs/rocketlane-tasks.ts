@@ -5,8 +5,8 @@ import { RocketlaneTask } from '../models.js';
 
 
 const sync = createSync({
-    description: `Retrieves all tasks, including owner and project information`,
-    version: '1.1.0', // Version, increment it when you release a new version
+    description: `Retrieves all tasks, including assignee and project information`,
+    version: '1.2.0', // Version, increment it when you release a new version
     endpoints: [{ method: 'GET', path: '/rocketlane/tasks', group: 'Tasks' }],
     frequency: 'every week', // Default sync interval
     autoStart: false, // Should the sync start immediately when a new connection is created?
@@ -32,6 +32,9 @@ const sync = createSync({
                     'dependencies', 
                     'parent', 
                     'type',
+                    'assignees',
+                    'phase',
+                    'priority',
                 ]
             },
             retries: 10
@@ -64,6 +67,9 @@ function mapTasks(records: any[]): RocketlaneTask[] {
         dependencies: record.dependencies,
         parent: record.parent,
         type: record.type,
+        assignees: record.assignees,
+        phase: record.phase,
+        priority: record.priority,
     }));
 }
 

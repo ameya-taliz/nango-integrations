@@ -1190,6 +1190,113 @@
         },
         "type": {
           "type": "string"
+        },
+        "assignees": {
+          "type": "object",
+          "properties": {
+            "members": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "emailId": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "number"
+                  },
+                  "firstName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "lastName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "emailId",
+                  "userId"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "placeholders": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "placeholderId": {
+                    "type": "number"
+                  },
+                  "placeholderName": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "object",
+                    "properties": {
+                      "roleId": {
+                        "type": "number"
+                      },
+                      "roleName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "roleId",
+                      "roleName"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "placeholderId",
+                  "placeholderName"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "members"
+          ],
+          "additionalProperties": false
+        },
+        "phase": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "priority": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
         }
       },
       "required": [
@@ -1701,6 +1808,113 @@
         },
         "type": {
           "type": "string"
+        },
+        "assignees": {
+          "type": "object",
+          "properties": {
+            "members": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "emailId": {
+                    "type": "string"
+                  },
+                  "userId": {
+                    "type": "number"
+                  },
+                  "firstName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "lastName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "emailId",
+                  "userId"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "placeholders": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "placeholderId": {
+                    "type": "number"
+                  },
+                  "placeholderName": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "object",
+                    "properties": {
+                      "roleId": {
+                        "type": "number"
+                      },
+                      "roleName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "roleId",
+                      "roleName"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "placeholderId",
+                  "placeholderName"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "members"
+          ],
+          "additionalProperties": false
+        },
+        "phase": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "priority": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
         }
       },
       "required": [

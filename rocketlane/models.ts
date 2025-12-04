@@ -116,7 +116,31 @@ export type RocketlaneUser = z.infer<typeof RocketlaneUser>;
       taskId: z.number(),
       taskName: z.string(),
     }).optional(),
-    type: z.string().optional()
+    type: z.string().optional(),
+    assignees: z.object({
+      members: z.array(z.object({
+        emailId: z.string(),
+        userId: z.number(),
+        firstName: z.union([z.string(), z.null()]).optional(),
+        lastName: z.union([z.string(), z.null()]).optional(),
+      })),
+      placeholders: z.array(z.object({
+        placeholderId: z.number(),
+        placeholderName: z.string(),
+        role: z.object({
+          roleId: z.number(),
+          roleName: z.string(),
+        }).optional(),
+      })).optional(),
+    }).optional(),
+    phase: z.object({
+      value: z.number(),
+      label: z.string(),
+    }).optional(),
+    priority: z.object({
+      value: z.number(),
+      label: z.string(),
+    }).optional(),
   });
   
   export type RocketlaneTask = z.infer<typeof RocketlaneTask>;

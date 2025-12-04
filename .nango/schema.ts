@@ -221,6 +221,18 @@ export interface RocketlaneTask {
   parent?: {  taskId: number;
   taskName: string;} | undefined;
   type?: string | undefined;
+  assignees?: {  members: ({  emailId: string;
+  userId: number;
+  firstName?: string | null | undefined;
+  lastName?: string | null | undefined;})[];
+  placeholders?: ({  placeholderId: number;
+  placeholderName: string;
+  role?: {  roleId: number;
+  roleName: string;} | undefined;})[];};
+  phase?: {  value: number;
+  label: string;} | undefined;
+  priority?: {  value: number;
+  label: string;} | undefined;
 };
 
 export interface RocketlaneUser {
@@ -307,6 +319,18 @@ export interface ActionOutput_rocketlane_updaterocketlanetask {
   parent?: {  taskId: number;
   taskName: string;} | undefined;
   type?: string | undefined;
+  assignees?: {  members: ({  emailId: string;
+  userId: number;
+  firstName?: string | null | undefined;
+  lastName?: string | null | undefined;})[];
+  placeholders?: ({  placeholderId: number;
+  placeholderName: string;
+  role?: {  roleId: number;
+  roleName: string;} | undefined;})[];};
+  phase?: {  value: number;
+  label: string;} | undefined;
+  priority?: {  value: number;
+  label: string;} | undefined;
 };
 
 export interface ActionInput_slack_sendmessage {
