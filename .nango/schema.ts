@@ -228,7 +228,7 @@ export interface RocketlaneUser {
   userId: number;
   firstName?: string | undefined;
   lastName?: string | undefined;
-  emailId: string;
+  email: string;
   type: 'TEAM_MEMBER' | 'CUSTOMER' | 'PARTNER' | 'EXTERNAL_PARTNER';
   status: 'ACTIVE' | 'INACTIVE' | 'INVITED' | 'PASSIVE';
   role: {  roleId: number;

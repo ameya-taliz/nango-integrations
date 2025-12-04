@@ -7,7 +7,7 @@ import { unixTimestampToISO } from '../rocketlane_utilities.js';
 
 const sync = createSync({
     description: `Retrieves all users`,
-    version: '1.0.0', 
+    version: '1.0.1', 
     endpoints: [{ method: 'GET', path: '/rocketlane/users', group: 'Users' }],
     frequency: 'every week',
     autoStart: false, 
@@ -49,7 +49,7 @@ function mapUsers(records: any[]): RocketlaneUser[] {
         userId: record.userId,
         firstName: record.firstName,
         lastName: record.lastName,
-        emailId: record.emailId,
+        email: record.email,
         type: record.type,
         status: record.status,
         role: record.role,

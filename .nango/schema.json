@@ -1221,7 +1221,7 @@
         "lastName": {
           "type": "string"
         },
-        "emailId": {
+        "email": {
           "type": "string"
         },
         "type": {
@@ -1284,7 +1284,7 @@
       "required": [
         "id",
         "userId",
-        "emailId",
+        "email",
         "type",
         "status",
         "role",

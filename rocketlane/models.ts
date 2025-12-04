@@ -59,7 +59,7 @@ export const RocketlaneUser = z.object({
   userId: z.number(),
   firstName: z.string().optional(),
   lastName: z.string().optional(),
-  emailId: z.string(),
+  email: z.string(),
   type: z.enum(['TEAM_MEMBER', 'CUSTOMER', 'PARTNER', 'EXTERNAL_PARTNER']),
   status: z.enum(['ACTIVE', 'INACTIVE', 'INVITED', 'PASSIVE']),
   role: z.object({
